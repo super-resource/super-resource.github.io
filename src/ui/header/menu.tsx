@@ -8,12 +8,15 @@ export function Menu({
 }: {
   direction: 'row' | 'column'
 }) {
+
+  const isrow = direction === 'row'
   return (
     <Box sx={{ flexGrow: 1, flexDirection: direction, display: 'flex', width: 200 }}>
       <Link to='/' style={{
         textAlign: 'center',
+        color: 'none'
       }}>
-        <Button color='primary'>Home</Button>
+        <Button color={ isrow ? 'inherit' : 'primary' }>Home</Button>
       </Link>
     </Box>
   );
